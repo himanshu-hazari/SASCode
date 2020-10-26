@@ -3,11 +3,11 @@
 			%let dsid=%sysfunc(open(&dsn));
 		%end;
 		%else %do;
-			%put ERROR:&dsn does not exists.
+			%put ERROR:&dsn does not exists.;
 			%ABORT;
 		%end;
 		%if &dsid = 0 %then %do;
-			%put ERROR:&dsn does not exists.
+			%put ERROR:&dsn does not exists.;
 			%let close=%sysfunc(close(&dsid));
 			%ABORT;
 		%end;
